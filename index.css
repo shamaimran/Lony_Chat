@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 263 70% 60%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-glow: 263 85% 75%;
+
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 5% 18%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 186 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    
+    --accent-glow: 186 100% 70%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5% 16%;
+    --input: 240 5% 16%;
+    --ring: 263 70% 60%;
+
+    --radius: 0.75rem;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(263 70% 60%) 0%, hsl(186 100% 50%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(240 10% 3.9%) 0%, hsl(263 30% 15%) 50%, hsl(240 10% 3.9%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(240 10% 6% / 0.6) 0%, hsl(263 20% 10% / 0.4) 100%);
+    
+    --shadow-glow: 0 0 40px hsl(263 70% 60% / 0.3);
+    --shadow-accent: 0 0 30px hsl(186 100% 50% / 0.3);
+    
+    --animation-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(180deg, hsl(240 10% 3.9%) 0%, hsl(263 30% 15%) 50%, hsl(240 10% 3.9%) 100%);
+    background-attachment: fixed;
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(12px);
+    background: linear-gradient(135deg, hsl(240 10% 6% / 0.6) 0%, hsl(263 20% 10% / 0.4) 100%);
+    border: 1px solid hsl(240 5% 20% / 0.5);
+  }
+  
+  .glow-primary {
+    box-shadow: 0 0 40px hsl(263 70% 60% / 0.3);
+  }
+  
+  .glow-accent {
+    box-shadow: 0 0 30px hsl(186 100% 50% / 0.3);
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+}
